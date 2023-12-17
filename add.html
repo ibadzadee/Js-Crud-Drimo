@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Inconsolata:wght@300;400;500;600;700;800;900&family=Lora&family=Martian+Mono:wght@300&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <img src="./img/logo-6.png.webp" alt="" />
+
+          <ul>
+            <li id="home"><a href="./index.html">HOME</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">PRICE</a></li>
+            <li><a href="#">TEAM</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li id="signIn"><a href="#">SIGN IN</a></li>
+            <li><a href="./add.html">ADD</a></li>
+          </ul>
+
+          <i class="bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+
+    <!------------------------ Add Page---------------------->
+
+    <section class="form">
+        <h1>Add Page</h1>
+
+        <form id="form">
+            <input type="file" id="img">
+            <label for="name">Name</label>
+            <input type="name" id="name">
+            <label for="description">Description</label>
+            <input type="text" id="description">
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </section>
+
+
+    <!----------------------- Footer---------------------->
+    <footer>
+      <div class="container">
+        <p>
+          Copyright ©2023 All rights reserved | This template is made with
+          <i class="bi bi-heart"></i> by <span>Colorlib</span>
+        </p>
+      </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/add.js"></script>
+
+  </body>
+</html>
