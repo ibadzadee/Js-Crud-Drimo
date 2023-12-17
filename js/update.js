@@ -2,41 +2,43 @@ let id = new URLSearchParams(window.location.search).get("id");
 
 const url = `http://localhost:3000/service/`;
 
-
-let name  = document.querySelector('#name');
-let category = document.querySelector('.category');
-let modalImage = document.querySelector('.modalImage');
-let categoryForm = document.querySelector('.category-form');
-let submit = document.querySelector('.submit');
+let name = document.querySelector("#name");
+let description = document.querySelector("#description");
+let img = document.querySelector("#img");
+let form = document.querySelector("#form");
+let submit = document.querySelector("#submit");
 let file = document.querySelector('input[type="file"]');
 
-fetch(url+id)
-.then(res => res.json())
-.then(data => {
-    modalImage.src = data.image
-    name.value = data.name;
-    category.value = data.description;
-})
+fetch(url + id)
+  .then((res) => res.json())
+  .then((data) => {
+    (img.src = data.image),
+      (name.value = data.name),
+      (description.value = data.description);
+  });
 
-file.addEventListener('input', (e) => {
-    let file = e.target.files[0];
-    if (file) {
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-            modalImage.src = reader.result;
-        }
-    }
-})
+file.addEventListener("input", () => {
+  let file = e.target.files[0];
+  if (file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      img.src = reader.result;
+    };
+  }
+});
 
-categoryForm.addEventListener("submit", (event) => {
-    event.preventDefault()
-    axios.put(url+id , {
-        image: modalImage.src,
-        name: name.value,
-        description: category.value
-    })
-    .then(res=>{
-        window.location="../index.html"
-    })
-})
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  axios.put(url + id , {
+    image: img.src,
+    name: name.value,
+    description: description.value,
+  })
+  .then(res=>{
+    window.location = "../index.html"
+  })
+
+});
+
+

@@ -510,100 +510,57 @@ footer p span {
   transition: all 0.5s ease;
 }
 
-#add {
-  padding: 100px 0px;
-}
-
-.category-form {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type=text] {
+#updatePage {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  padding: 170px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-input[type=submit] {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  border-radius: 3px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+#updatePage #form {
+  width: 40%;
+  background-color: snow;
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0px 0px 10px 0px blue;
 }
-
-input[type=submit]:hover {
-  background-color: #0056b3;
-}
-
-form {
-  margin: 200px auto;
-}
-
-.modal {
-  width: 400px;
-  background-color: rgb(236, 236, 236);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  display: none;
-}
-
-.modalForm {
-  margin: 0px;
-  position: relative;
-}
-
-.imgCont {
+#updatePage #form .imgDiv {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  margin-bottom: 60px;
-  margin: 20px auto;
-  position: relative;
-  border: 1px solid #000;
   padding: 20px;
+  border-radius: 50%;
+  border: 1px solid #6b6d6f;
 }
-
-.modalImage {
+#updatePage #form .imgDiv #img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   -o-object-fit: contain;
      object-fit: contain;
-  border-radius: 50%;
 }
-
-.plus {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
+#updatePage #form #name, #updatePage #form #description, #updatePage #form #submit {
+  padding: 5px 10px;
+  font-size: 17px;
+}
+#updatePage #form #submit {
+  background-color: green;
+  border: 1px solid transparent;
   cursor: pointer;
-  background-color: #0056b3;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
+  color: white;
+  scale: 0.9;
+  font-size: 20px;
+}
+#updatePage #form #submit:hover {
+  scale: 1;
+  opacity: 0.9;
+  transition: all 0.5s ease;
+}
+#updatePage #form label {
+  padding-top: 20px;
 }
 
 .form {
@@ -616,7 +573,8 @@ form {
   padding: 200px 0px;
 }
 .form form {
-  background-color: aquamarine;
+  background-color: snow;
+  box-shadow: 0 0 10px 0 blue;
   padding: 100px;
   display: flex;
   justify-content: flex-start;
@@ -628,8 +586,13 @@ form {
   padding-top: 10px;
   font-weight: 700;
 }
+.form form #name, .form form #description {
+  padding: 5px 20px;
+  font-size: 18px;
+}
 .form form #submit {
-  padding: 5px 10px;
+  margin-top: 20px;
+  padding: 10px 20px;
   background-color: darkblue;
   border: 1px solid transparent;
   cursor: pointer;
@@ -637,6 +600,7 @@ form {
 }
 .form form #submit:hover {
   opacity: 0.8;
+  scale: 0.9;
   transition: all 0.5s ease;
 }
 

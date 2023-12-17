@@ -46,10 +46,6 @@ header {
         padding: 20px 0px;
         @include display(space-between, center);
 
-        // img {
-        //     width: 120px
-        // }
-
         ul {
             @include display;
             gap: 35px;
@@ -569,99 +565,57 @@ footer{
 }
 
 // <!------------------ Update.html-------------------->
-#add{
-padding: 100px 0px;
-}
-.category-form {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-input[type="submit"] {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  border-radius: 3px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-input[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-form{
-  margin: 200px auto;
-}
-
-.modal{
-  width: 400px;
-  background-color: rgb(236, 236, 236);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  display: none;
+#updatePage{
+    width: 100%;
+    padding: 170px 0px;
+    @include display;
+    #form{
+        width: 40%;
+        background-color: snow;
+        padding: 50px 0px;
+        @include display;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0px 0px 10px 0px blue;
+        .imgDiv{
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border-radius: 50%;
+            border: 1px solid $gray;
+            #img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: contain;
+            }
+            // input[type="file"]{
+            // }
+        }
+        #name , #description , #submit{
+            padding: 5px 10px;
+            font-size: 17px;
+        }
+        #submit{
+            background-color: green;
+            border: 1px solid transparent;
+            cursor: pointer;
+            color: white;
+            scale: 0.9;
+            font-size: 20px;
+            &:hover{
+                scale: 1;
+                opacity: 0.9;
+                transition: all 0.5s ease;
+            }
+        }
+        label{
+            padding-top: 20px;
+        }
+    }
 }
 
-.modalForm{
-  margin: 0px;
-  position: relative;
-}
 
-.imgCont{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-bottom: 60px;
-  margin: 20px auto;
-  position: relative;
-  border: 1px solid #000;
-  padding: 20px;
-}
-
-.modalImage{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.plus{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  font-size: 30px;
-  cursor: pointer;
-  background-color: #0056b3;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-}
 
 
 // <!------------------ Add.html-------------------->
@@ -674,7 +628,8 @@ form{
     padding: 200px 0px;
   
     form {
-      background-color: aquamarine;
+      background-color: snow;
+      box-shadow: 0 0 10px 0 blue;
       padding: 100px;
       @include display(flex-start, flex-start);
       flex-direction: column;
@@ -684,15 +639,20 @@ form{
         padding-top: 10px;
         font-weight: 700;
       }
-  
+      #name , #description{
+        padding: 5px 20px;
+        font-size: 18px;
+      }
       #submit {
-        padding: 5px 10px;
+        margin-top: 20px;
+        padding: 10px 20px;
         background-color: darkblue;
         border: 1px solid transparent;
         cursor: pointer;
         color: white;
         &:hover{
           opacity: 0.8;
+          scale: 0.9;
           transition: all 0.5s ease;
         }
       }

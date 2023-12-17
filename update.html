@@ -44,21 +44,20 @@
 
     <!------------------------ Update Page---------------------->
 
-    <section id="add">
-        <form class="category-form">
-            <div class="imgCont">
-                <img class="modalImage" src="" alt="">
-                <input accept="image/png" type="file">
+    <section id="updatePage">
+        <form id="form">
+            <div class="imgDiv">
+                <img id="img" src="" alt="">
+                <input type="file">
             </div>
 
-            <label for="category-name">Name:</label>
+            <label>Name:</label>
+            <input type="text" id="name">
 
-            <input class="name" type="text" id="name" name="category-name" required>
+            <label>Description:</label>
+            <input type="text" id="description">
 
-            <label for="category-name">Category:</label>
-            <input class="category" type="text" id="category" name="category-name" required>
-
-            <input class="submit" type="submit" value="Submit" id="submit">
+            <input type="submit" id="submit">
         </form>
     </section>
 
