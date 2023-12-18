@@ -45,7 +45,8 @@ header {
 
     nav {
         padding: 20px 0px;
-        @include display(space-between, center);        
+        @include display(space-between, center);      
+        gap: 30px;  
         ul {
             @include display;
             gap: 35px;
@@ -78,10 +79,11 @@ header {
         }
     }
     .header-center{
-        width: 100%;
+        // width: 100%;
         display:  flex;
         flex-direction: column;
         #mobile-nav{
+            width: 100%;
             border-top: 1px solid $gray;
             @include display(flex-start , flex-start);
             width: 100%;
@@ -153,42 +155,9 @@ header {
 
             h2 {
                 width: 100%;
-                font-size: 51px;
+                font-size: 49px;
                 font-weight: 450;
                 text-transform: capitalize;
-                text-wrap: nowrap;
-
-                // span {
-                //     position: relative;
-
-                // &::before {
-                //     content: "Special Offer Now $10 ";
-                //     color: #fff;
-                //     background: #fc6428;
-                //     position: absolute;
-                //     left: -50%;
-                //     top: -125px;
-                //     width: 500px;
-                //     text-align: center;
-                //     font-size: 36px;
-                //     text-transform: capitalize;
-                //     font-size: 36px;
-                //     padding: 20px 0px;
-                // }
-
-                // &:after {
-                //     content: "";
-                //     width: 0;
-                //     height: 0;
-                //     border-style: solid;
-                //     border-width: 22px 14px 0 14px;
-                //     border-color: #fc6428 transparent transparent transparent;
-                //     position: absolute;
-                //     left: 70%;
-                //     top: -46px;
-                // }
-
-                // }
             }
 
             h3 {
@@ -778,33 +747,6 @@ footer {
     }
 }
 
-// @media screen and (max-width:1312px) {
-//     #banner .banner-center {
-//         .right {
-//             width: 70%;
-//             margin: 0 auto;
-//             img{
-//                 margin: 0 auto;
-//                 width: 400px;
-//             }
-//         }
-//     }
-// }
-
-@media screen and (max-width:1200px) {
-    #banner .banner-center {
-
-        .left {
-            h2 span::before {
-                left: -86px;
-                top: -108px;
-                width: 275px;
-                font-size: 20px;
-
-            }
-        }
-    }
-}
 
 
 
@@ -828,16 +770,6 @@ footer {
 
     #banner .banner-center {
         flex-direction: column;
-
-        // .left {
-        //     h2 span::before {
-        //         left: -86px;
-        //         top: -108px;
-        //         width: 275px;
-        //         font-size: 20px;
-
-        //     }
-        // }
 
         .right {
             width: 100%;
@@ -873,10 +805,6 @@ footer {
         &::before {
             left: -300px;
         }
-
-        //    &::after{
-        //             left:0;   
-        //     }
     }
 
     #service .service-center {
@@ -892,13 +820,15 @@ footer {
     .container {
         padding: 0px 12px;
     }
-
-    // #banner .banner-center .left{
-    //     h2 span::before {
-    //         left: -300px;
-    //     }
-
-    // }
+#banner .banner-center .left .orange-div{
+    width: 300px;
+    h3{
+        font-size: 20px;
+    }
+    &::after{
+       top: 62px;
+    }
+}
 
     #service .service-center {
         .bottom {
