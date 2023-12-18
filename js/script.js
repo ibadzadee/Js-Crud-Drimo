@@ -32,7 +32,7 @@ function getDataJson(){
 function deleteElement(id) {
     // console.log(id);
     // id = parseFloat(id)
-    axios.delete(url + parseFloat(id))
+    axios.delete(url + id)
     window.location.reload()
 
 }
