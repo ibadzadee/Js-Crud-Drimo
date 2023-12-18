@@ -30,6 +30,7 @@ header {
   position: fixed;
   z-index: 900;
   background-color: white;
+  transition: all 0.7s ease;
 }
 header nav {
   padding: 20px 0px;
@@ -58,6 +59,34 @@ header nav a:hover {
 header nav .bi-list {
   font-size: 30px;
   display: none;
+  cursor: pointer;
+}
+header nav .bi-list:hover {
+  color: #7db9e8;
+  transition: all 0.5s ease;
+}
+header .header-center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+header .header-center #mobile-nav {
+  border-top: 1px solid #6b6d6f;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0px;
+  display: none;
+}
+header .header-center #mobile-nav a {
+  color: black;
+}
+header .header-center #mobile-nav a:hover {
+  color: #7db9e8;
+  transition: all 0.5s ease;
 }
 
 #banner {
@@ -78,37 +107,29 @@ header nav .bi-list {
   color: white;
 }
 #banner .banner-center .left {
+  min-height: 1px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
   flex-direction: column;
 }
-#banner .banner-center .left h2 {
-  width: 100%;
-  font-size: 51px;
-  font-weight: 450;
-  text-transform: capitalize;
-  text-wrap: nowrap;
-}
-#banner .banner-center .left h2 span {
-  position: relative;
-}
-#banner .banner-center .left h2 span::before {
-  content: "Special Offer Now $10 ";
-  color: #fff;
-  background: #fc6428;
-  position: absolute;
-  left: -50%;
-  top: -125px;
-  width: 500px;
-  text-align: center;
-  font-size: 36px;
-  text-transform: capitalize;
-  font-size: 36px;
+#banner .banner-center .left .orange-div {
+  background-color: #fc6428;
+  width: 450px;
   padding: 20px 0px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 180px;
+  font-size: 25px;
+  font-weight: 700;
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#banner .banner-center .left h2 span:after {
+#banner .banner-center .left .orange-div:after {
   content: "";
   width: 0;
   height: 0;
@@ -116,7 +137,15 @@ header nav .bi-list {
   border-width: 22px 14px 0 14px;
   border-color: #fc6428 transparent transparent transparent;
   position: absolute;
-  top: -46px;
+  left: 50%;
+  top: 88px;
+}
+#banner .banner-center .left h2 {
+  width: 100%;
+  font-size: 51px;
+  font-weight: 450;
+  text-transform: capitalize;
+  text-wrap: nowrap;
 }
 #banner .banner-center .left h3 {
   font-size: 41px;
@@ -146,7 +175,7 @@ header nav .bi-list {
   text-transform: capitalize;
 }
 #banner .banner-center .right {
-  width: 100%;
+  width: 1500px;
   margin-right: -150px;
 }
 #banner .banner-center .right img {
@@ -542,7 +571,9 @@ footer p span {
   -o-object-fit: contain;
      object-fit: contain;
 }
-#updatePage #form #name, #updatePage #form #description, #updatePage #form #submit {
+#updatePage #form #name,
+#updatePage #form #description,
+#updatePage #form #submit {
   padding: 5px 10px;
   font-size: 17px;
 }
@@ -586,7 +617,8 @@ footer p span {
   padding-top: 10px;
   font-weight: 700;
 }
-.form form #name, .form form #description {
+.form form #name,
+.form form #description {
   padding: 5px 20px;
   font-size: 18px;
 }

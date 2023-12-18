@@ -26,3 +26,16 @@ function deleteElement(id) {
     axios.delete(url + parseFloat(id))
     window.location.reload()
 }
+
+
+let mobileNav = document.querySelector("#mobile-nav")
+let menu = document.querySelector("header nav .bi-list")
+
+menu.addEventListener("click" , ()=>{
+    if(mobileNav.style.display != "flex"){
+        mobileNav.style.display = "flex";
+    }
+    else{
+        mobileNav.style.display = "none";
+    }
+})

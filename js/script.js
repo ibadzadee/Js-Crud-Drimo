@@ -70,6 +70,44 @@ function addFav(id, heart) {
 }
 
 
+// ---------------------navbar ---------------------
+ let header = document.querySelector("header")
+ let nav = document.querySelector("header nav")
+ a = document.querySelectorAll("ul li a")
+
+ window.addEventListener("scroll" , ()=>{
+    if(window.scrollY>100){
+        header.style.background = "darkblue"
+        header.style.opacity = "0.7"
+        nav.style.padding ="7px 0px"
+        a.forEach(e => {
+            e.style.color = "white"
+            // e.style.hover.color ="blue"
+        })
+    }
+    else{
+        header.style.background= ""
+        header.style.opacity = ""
+        nav.style.padding =""
+        a.forEach( (e)=>{
+            e.style.color = ""
+        })
+    }
+ })
+
+//  ------------------mobile-nav ------------------
+let mobileNav = document.querySelector("#mobile-nav")
+let menu = document.querySelector("header nav .bi-list")
+
+menu.addEventListener("click" , ()=>{
+    if(mobileNav.style.display != "flex"){
+        mobileNav.style.display = "flex";
+    }
+    else{
+        mobileNav.style.display = "none";
+    }
+})
+
 
 
 

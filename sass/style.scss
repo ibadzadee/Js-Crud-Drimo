@@ -41,11 +41,11 @@ header {
     position: fixed;
     z-index: 900;
     background-color: white;
+    transition: all 0.7s ease;
 
     nav {
         padding: 20px 0px;
-        @include display(space-between, center);
-
+        @include display(space-between, center);        
         ul {
             @include display;
             gap: 35px;
@@ -70,6 +70,33 @@ header {
         .bi-list {
             font-size: 30px;
             display: none;
+            cursor: pointer;
+            &:hover{
+                color: $light-blue;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+    .header-center{
+        width: 100%;
+        display:  flex;
+        flex-direction: column;
+        #mobile-nav{
+            border-top: 1px solid $gray;
+            @include display(flex-start , flex-start);
+            width: 100%;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0px;
+            // margin-left: 0;
+            display: none;
+            a{
+                color: black;
+                &:hover{
+                    color: $light-blue;
+                    transition: all 0.5s ease;
+                }
+            }
         }
     }
 }
@@ -92,10 +119,37 @@ header {
         }
 
         .left {
-            // width: 50%;
+            // width: 2000px;
+            min-height: 1px;
             @include display(center, flex-start);
             gap: 30px;
             flex-direction: column;
+
+            .orange-div {
+                background-color: $orange;
+                width: 450px;
+                padding: 20px 0px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 180px;
+                font-size: 25px;
+                font-weight: 700;
+                flex-wrap: nowrap;
+                @include display;
+
+                &:after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 22px 14px 0 14px;
+                    border-color: #fc6428 transparent transparent transparent;
+                    position: absolute;
+                    left: 50%;
+                    top: 88px;
+                }
+            }
 
             h2 {
                 width: 100%;
@@ -104,37 +158,37 @@ header {
                 text-transform: capitalize;
                 text-wrap: nowrap;
 
-                span {
-                    position: relative;
+                // span {
+                //     position: relative;
 
-                    &::before {
-                        content: "Special Offer Now $10 ";
-                        color: #fff;
-                        background: #fc6428;
-                        position: absolute;
-                        left: -50%;
-                        top: -125px;
-                        width: 500px;
-                        text-align: center;
-                        font-size: 36px;
-                        text-transform: capitalize;
-                        font-size: 36px;
-                        padding: 20px 0px;
-                    }
+                // &::before {
+                //     content: "Special Offer Now $10 ";
+                //     color: #fff;
+                //     background: #fc6428;
+                //     position: absolute;
+                //     left: -50%;
+                //     top: -125px;
+                //     width: 500px;
+                //     text-align: center;
+                //     font-size: 36px;
+                //     text-transform: capitalize;
+                //     font-size: 36px;
+                //     padding: 20px 0px;
+                // }
 
-                    &:after {
-                        content: "";
-                        width: 0;
-                        height: 0;
-                        border-style: solid;
-                        border-width: 22px 14px 0 14px;
-                        border-color: #fc6428 transparent transparent transparent;
-                        position: absolute;
-                        // left: 70%;
-                        top: -46px;
-                    }
+                // &:after {
+                //     content: "";
+                //     width: 0;
+                //     height: 0;
+                //     border-style: solid;
+                //     border-width: 22px 14px 0 14px;
+                //     border-color: #fc6428 transparent transparent transparent;
+                //     position: absolute;
+                //     left: 70%;
+                //     top: -46px;
+                // }
 
-                }
+                // }
             }
 
             h3 {
@@ -170,7 +224,7 @@ header {
         }
 
         .right {
-            width: 100%;
+            width: 1500px;
             margin-right: -150px;
 
             img {
@@ -247,22 +301,26 @@ header {
                 padding: 20px;
                 box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
                 transition: all 0.7s ease;
-                &:hover{
+
+                &:hover {
                     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
                     transform: translateY(-10px);
                     transition: all 0.7s ease;
                 }
+
                 img {
                     width: 60px;
                 }
-                .bi-heart-fill{
+
+                .bi-heart-fill {
                     position: absolute;
                     top: 10px;
                     right: 10px;
                     font-size: 19px;
                     // color: red;
                 }
-                button{
+
+                button {
                     padding: 5px 20px;
                     border: 1px solid transparent;
                     // font-weight: 700;
@@ -270,35 +328,41 @@ header {
                     text-shadow: 0 0 1px black;
                     font-size: 16px;
                     cursor: pointer;
-                    &:hover{
+
+                    &:hover {
                         opacity: 0.9;
                         scale: 0.9;
                         transition: all 0.5s ease;
                     }
                 }
-                #delete{
+
+                #delete {
                     background-color: red;
                 }
-                #update{
+
+                #update {
                     background-color: green;
                 }
-                #details{
+
+                #details {
                     background-color: yellow;
                 }
             }
-            
+
         }
-        #loadMore{
+
+        #loadMore {
             padding: 10px 20px;
             font-size: 18px;
             cursor: pointer;
             background-color: darkblue;
             color: white;
-            scale:1;
-            &:hover{
+            scale: 1;
+
+            &:hover {
                 opacity: 0.9;
                 // transform: translateY(-10px);
-                scale:0.9 ;
+                scale: 0.9;
                 transition: all 0.5s ease;
             }
         }
@@ -343,17 +407,20 @@ header {
                 padding: 20px 0px;
             }
         }
-        .bottom{
+
+        .bottom {
             display: grid;
-            grid-template-columns: repeat(4 , auto);
+            grid-template-columns: repeat(4, auto);
             gap: 30px;
+
             // align-items: flex-start;
             // justify-content: space-between;
-            .divs{
+            .divs {
                 display: flex;
                 align-items: center;
                 gap: 20px;
-                i{
+
+                i {
                     background-color: white;
                     padding: 10px 12px;
                     outline: 5px solid rgba(255, 255, 255, 0.5);
@@ -361,14 +428,17 @@ header {
                     color: $light-blue;
                     font-size: 30px;
                 }
-                .text{
-                    @include display(center , flex-start);
+
+                .text {
+                    @include display(center, flex-start);
                     flex-direction: column;
                     gap: 5px;
-                    h4{
+
+                    h4 {
                         font-size: 30px;
                     }
-                    p{
+
+                    p {
                         font-size: 22px;
                     }
                 }
@@ -378,10 +448,12 @@ header {
 }
 
 // <!------------------ LATEST NEWS-------------------->
-#news{
+#news {
     width: 100%;
-    .news-center{
+
+    .news-center {
         padding: 100px 0px;
+
         .top {
             text-align: center;
             @include display;
@@ -413,35 +485,43 @@ header {
                 color: $gray;
             }
         }
-        .bottom{
+
+        .bottom {
             display: grid;
             grid-template-columns: repeat(3, auto);
             gap: 25px;
-            .cards{
+
+            .cards {
                 border: 1px solid $card-color;
                 border-top: 0;
+
                 // border-left:1px solid $card-color;
-                .img{
+                .img {
                     overflow: hidden;
-                    img{
+
+                    img {
                         width: 100%;
-                        &:hover{
+
+                        &:hover {
                             transform: scale(1.1);
                             transition: all 0.5s ease;
                         }
                     }
                 }
-                .text{
+
+                .text {
                     padding: 40px;
-                    @include display(center , flex-start);
+                    @include display(center, flex-start);
                     flex-direction: column;
                     gap: 20px;
-                    h5{
+
+                    h5 {
                         font-size: 20px;
                         color: $h4-color;
                         font-weight: 400;
                     }
-                    p{
+
+                    p {
                         color: $gray;
                     }
                 }
@@ -452,16 +532,18 @@ header {
 }
 
 // <!------------------ Footer-------------------->
-footer{
+footer {
     width: 100%;
     text-align: center;
     padding: 50px 0px;
     background-color: $footer;
-    p{
+
+    p {
         color: $gray;
         border-top: 1px solid #6b6d6f;
         padding-top: 50px;
-        span{
+
+        span {
             color: $light-blue;
         }
     }
@@ -474,6 +556,7 @@ footer{
 
 #details {
     padding: 100px 0px;
+
     .details-center {
         padding: 100px 0px;
         width: 100%;
@@ -514,6 +597,7 @@ footer{
             padding: 100px 0px;
             flex-wrap: wrap;
             gap: 20px;
+
             .cards {
                 @include display;
                 flex-direction: column;
@@ -535,7 +619,8 @@ footer{
                 border-radius: 10px;
                 box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
                 transition: all 0.7s ease;
-                &:hover{
+
+                &:hover {
                     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
                     transform: translateY(-10px);
                     transition: all 0.7s ease;
@@ -545,7 +630,8 @@ footer{
             img {
                 width: 60px;
             }
-            #delete{
+
+            #delete {
                 padding: 5px 20px;
                 border: 1px solid transparent;
                 background-color: red;
@@ -554,7 +640,8 @@ footer{
                 text-shadow: 0 0 1px black;
                 font-size: 16px;
                 cursor: pointer;
-                &:hover{
+
+                &:hover {
                     opacity: 0.9;
                     scale: 0.9;
                     transition: all 0.5s ease;
@@ -565,11 +652,12 @@ footer{
 }
 
 // <!------------------ Update.html-------------------->
-#updatePage{
+#updatePage {
     width: 100%;
     padding: 170px 0px;
     @include display;
-    #form{
+
+    #form {
         width: 40%;
         background-color: snow;
         padding: 50px 0px;
@@ -577,39 +665,45 @@ footer{
         flex-direction: column;
         gap: 10px;
         box-shadow: 0px 0px 10px 0px blue;
-        .imgDiv{
+
+        .imgDiv {
             width: 200px;
             height: 200px;
             padding: 20px;
             border-radius: 50%;
             border: 1px solid $gray;
-            #img{
+
+            #img {
                 width: 100%;
                 height: 100%;
                 border-radius: 50%;
                 object-fit: contain;
             }
-            // input[type="file"]{
-            // }
         }
-        #name , #description , #submit{
+
+        #name,
+        #description,
+        #submit {
             padding: 5px 10px;
             font-size: 17px;
         }
-        #submit{
+
+        #submit {
             background-color: green;
             border: 1px solid transparent;
             cursor: pointer;
             color: white;
             scale: 0.9;
             font-size: 20px;
-            &:hover{
+
+            &:hover {
                 scale: 1;
                 opacity: 0.9;
                 transition: all 0.5s ease;
             }
         }
-        label{
+
+        label {
             padding-top: 20px;
         }
     }
@@ -626,38 +720,42 @@ footer{
     flex-direction: column;
     gap: 20px;
     padding: 200px 0px;
-  
+
     form {
-      background-color: snow;
-      box-shadow: 0 0 10px 0 blue;
-      padding: 100px;
-      @include display(flex-start, flex-start);
-      flex-direction: column;
-      gap: 10px;
-  
-      label {
-        padding-top: 10px;
-        font-weight: 700;
-      }
-      #name , #description{
-        padding: 5px 20px;
-        font-size: 18px;
-      }
-      #submit {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: darkblue;
-        border: 1px solid transparent;
-        cursor: pointer;
-        color: white;
-        &:hover{
-          opacity: 0.8;
-          scale: 0.9;
-          transition: all 0.5s ease;
+        background-color: snow;
+        box-shadow: 0 0 10px 0 blue;
+        padding: 100px;
+        @include display(flex-start, flex-start);
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+            padding-top: 10px;
+            font-weight: 700;
         }
-      }
+
+        #name,
+        #description {
+            padding: 5px 20px;
+            font-size: 18px;
+        }
+
+        #submit {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: darkblue;
+            border: 1px solid transparent;
+            cursor: pointer;
+            color: white;
+
+            &:hover {
+                opacity: 0.8;
+                scale: 0.9;
+                transition: all 0.5s ease;
+            }
+        }
     }
-  }
+}
 
 
 
@@ -705,8 +803,8 @@ footer{
 
             }
         }
-        }
     }
+}
 
 
 
@@ -759,25 +857,28 @@ footer{
             gap: 40px;
         }
     }
-    #happyClient .happy-center .bottom{
-        grid-template-columns: repeat(2,auto);
+
+    #happyClient .happy-center .bottom {
+        grid-template-columns: repeat(2, auto);
     }
 
-    #news .news-center .bottom{
-        grid-template-columns: repeat(2 , auto);
+    #news .news-center .bottom {
+        grid-template-columns: repeat(2, auto);
     }
 
 }
 
 @media screen and (max-width:772px) {
-    #banner .banner-center .left h2 span{
-       &::before{
-                left:-300px;   
+    #banner .banner-center .left h2 span {
+        &::before {
+            left: -300px;
         }
-    //    &::after{
-    //             left:0;   
-    //     }
+
+        //    &::after{
+        //             left:0;   
+        //     }
     }
+
     #service .service-center {
         .bottom {
             grid-template-columns: repeat(2, auto);
@@ -806,12 +907,12 @@ footer{
 
     }
 
-    #happyClient .happy-center .bottom{
-        grid-template-columns: repeat(1,auto);
+    #happyClient .happy-center .bottom {
+        grid-template-columns: repeat(1, auto);
     }
 
-    #news .news-center .bottom{
-        grid-template-columns: repeat(1 , auto);
+    #news .news-center .bottom {
+        grid-template-columns: repeat(1, auto);
     }
 
 }
